@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at top left, #2d0b3a, #0f172a 70%);
+  background-attachment: fixed;
+  overflow: auto;
+}
+
+.cyberpunk-text {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #00f3ff;
+  text-shadow: 
+    0 0 5px #00f3ff,
+    0 0 10px #00f3ff,
+    0 0 20px #00f3ff,
+    0 0 40px #00f3ff;
+  animation: flicker 5s infinite alternate;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    text-shadow: 
+      0 0 5px #00f3ff,
+      0 0 10px #00f3ff;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.85;
+    text-shadow: 0 0 2px #00f3ff;
+  }
+}
+
+.glow-button {
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  border: 1px solid #00f3ff;
+  color: #00f3ff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #00f3ff;
+}
+
+.glow-button:hover {
+  background: #00f3ff;
+  color: #000;
+  box-shadow: 0 0 10px #00f3ff;
+}
+
+.chart-container {
+  transition: all 0.5s ease;
+  cursor: crosshair;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-container:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    0 10px 25px rgba(0, 243, 255, 0.3),
+    0 0 15px rgba(0, 243, 255, 0.2);
+  background-color: rgba(30, 41, 59, 0.9) !important;
+  border-color: rgba(0, 243, 255, 1) !important;
+  z-index: 10;
+}
+
+.chart-glow {
+  filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.chart-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.6));
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 5px currentColor);
+  transition: all 0.3s ease;
+}
+
+.icon-glow:hover {
+  filter: drop-shadow(0 0 12px currentColor);
+  transform: scale(1.2);
+}
+
+@keyframes pulse-glow {
+  0% { filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.5)); }
+  50% { filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8)); }
+  100% { filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.5)); }
+}
+
+.fraud-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.chart-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chart-container:hover::after {
+  animation: shine 1.5s infinite;
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.stat-card {
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.5) !important;
+}
+
+code {
+  font-family: 'Share Tech Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,12 @@
+POST http://localhost:8080/api/transactions/check
+Content-Type: application/json
+
+{
+  "mobileNo": "9999999999",
+  "location": "Delhi",
+  "merchant": "FakeStore",
+  "txnType": "UPI",
+  "amount": 90000,
+  "status": "FAILED",
+  "ipAddress": "192.168.1.10"
+}

@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #111827;
+  color: white;
+}
+
+@keyframes jiggle {
+  0% { transform: rotate(-0.2deg); }
+  25% { transform: rotate(0.2deg); }
+  50% { transform: rotate(-0.2deg); }
+  75% { transform: rotate(0.2deg); }
+  100% { transform: rotate(-0.2deg); }
+}
+
+.jiggle-effect {
+  animation: jiggle 2s ease-in-out infinite;
+  display: inline-block; /* Ensure transform works */
+}
+
+.jiggle-hover:hover {
+  animation: jiggle 1s ease-in-out infinite;
+}
+
+/* Base styles for components that will have jiggle */
+.jiggle-card {
+  transition: transform 0.3s ease;
+  animation: jiggle 8s ease-in-out infinite;
+}
+
+.jiggle-card:hover {
+  animation: jiggle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* Specific jiggle for tables - movement up and down */
+.jiggle-table {
+  transition: transform 0.5s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.jiggle-table:hover {
+  animation: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
